@@ -1,0 +1,98 @@
+/* style.css: all the colours, spacing and layout.
+   Colours are stored as variables so you can change them in one place. */
+:root {
+  --navy: #0b2a5b;        /* main accent */
+  --navy-dark: #071b3d;   /* hover state */
+  --ink: #1c2433;         /* body text */
+  --muted: #5a6577;       /* secondary text */
+  --tint: #eef3fa;       /* light blue for alternate sections */
+  --line: #d6dfec;        /* borders */
+  --helix: #2f6fb5;       /* helix highlight */
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; } /* keeps headings clear of the sticky bar */
+body {
+  margin: 0; background: #fff; color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+}
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--navy); line-height: 1.2; }
+a { color: var(--navy); }
+:focus-visible { outline: 3px solid var(--helix); outline-offset: 2px; } /* visible for keyboard users */
+
+/* Reusable centred container */
+.container { width: min(1080px, 92%); margin: 0 auto; }
+.narrow { width: min(720px, 92%); }
+
+/* ---------- Header and navigation ---------- */
+.site-header { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+.brand { font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+.nav-links { display: flex; gap: 1.4rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--muted); padding: .3rem 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); border-color: var(--navy); } /* .active is set by script.js */
+.nav-toggle { display: none; background: none; border: 0; padding: .5rem; cursor: pointer; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px 0; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 4rem 0 3rem; background: linear-gradient(180deg, #fff, var(--tint)); }
+.hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center; }
+.hero-kicker { color: var(--muted); margin: 0 0 .5rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 1rem; }
+.lead { font-size: 1.15rem; max-width: 52ch; }
+.helix { width: 100%; max-height: 380px; }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-block; background: var(--navy); color: #fff; padding: .7rem 1.4rem; border: 2px solid var(--navy);
+       border-radius: 6px; text-decoration: none; font: inherit; font-weight: 600; cursor: pointer; }
+.btn:hover { background: var(--navy-dark); }
+.btn-ghost { background: transparent; color: var(--navy); }
+.btn-ghost:hover { background: var(--tint); }
+
+/* ---------- Sections ---------- */
+.section { padding: 4rem 0; }
+.section.alt { background: var(--tint); }
+.section h2 { font-size: 2rem; margin-top: 0; }
+.note { color: var(--muted); }
+
+/* Cards and grids: auto-fit makes columns wrap on small screens */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+.grid.three { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.3rem; }
+.card h3 { margin-top: 0; font-size: 1.15rem; }
+.project { border-top: 4px solid var(--navy); }
+.badge { display: inline-block; font-size: .8rem; background: var(--tint); color: var(--navy); border: 1px dashed var(--navy);
+         padding: .1rem .6rem; border-radius: 99px; margin-bottom: .6rem; }
+.tags { list-style: none; padding: 0; margin: .8rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags li { background: var(--tint); border-radius: 4px; padding: .15rem .6rem; font-size: .9rem; }
+
+/* Education timeline: a navy line with dots */
+.timeline { border-left: 2px solid var(--navy); margin-top: 1.5rem; padding-left: 1.5rem; }
+.entry { position: relative; margin-bottom: 1.8rem; }
+.entry::before { content: ""; position: absolute; left: -1.95rem; top: .5rem; width: 12px; height: 12px;
+                 border-radius: 50%; background: #fff; border: 3px solid var(--navy); }
+.entry h3 { margin: 0; }
+.meta { color: var(--muted); margin: .2rem 0 .5rem; }
+
+/* ---------- Contact form ---------- */
+.contact-list { padding-left: 1.2rem; }
+form label { display: block; font-weight: 600; margin-top: 1rem; }
+form input, form textarea { width: 100%; padding: .7rem; border: 1px solid var(--line); border-radius: 6px; font: inherit; }
+form .btn { margin-top: 1rem; }
+#form-status { min-height: 1.5em; color: var(--navy); }
+
+.footer { text-align: center; padding: 1.5rem; background: var(--navy); color: #fff; }
+.footer p { margin: 0; }
+
+/* ---------- Mobile layout (screens under 760px wide) ---------- */
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .nav-links { display: none; position: absolute; top: 62px; left: 0; right: 0; flex-direction: column; gap: 0;
+               background: #fff; border-bottom: 1px solid var(--line); padding: .5rem 4%; }
+  .nav-links.open { display: flex; }       /* script.js adds .open */
+  .nav-links a { display: block; padding: .7rem 0; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .helix { max-height: 220px; order: -1; }
+}

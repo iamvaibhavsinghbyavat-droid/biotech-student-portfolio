@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- index.html: the structure and content of Vaibhav's portfolio.
+     It is linked to style.css (design) and script.js (behaviour). -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaibhav | Biotechnology Portfolio</title>
+  <meta name="description" content="Portfolio of Vaibhav, a first-year Biotechnology student at JECRC University, Jaipur.">
+  <!-- Links the stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- "defer" runs the script after the page has loaded -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Navigation bar (stays at the top while scrolling) ===== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="brand">Vaibhav</a>
+      <!-- Hamburger button: only visible on small screens (script.js toggles the menu) -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HOME ===== -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-kicker">Biotechnology student, JECRC University, Jaipur</p>
+          <h1>Hi, I'm <span class="name">Vaibhav</span>.</h1>
+          <p class="lead">I'm in my first year of Biotechnology, learning how living systems work and how data and AI are changing the way we study them.</p>
+          <div class="actions">
+            <a class="btn" href="#projects">View my projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <!-- The DNA helix is drawn into this SVG by script.js -->
+        <svg id="helix" class="helix" viewBox="0 0 200 360" role="img" aria-label="Animated DNA double helix"></svg>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About Me</h2>
+        <p>I'm Vaibhav, a first-year Biotechnology student at JECRC University in Jaipur. I chose biotechnology because I like understanding how living things work, and how that knowledge can be used to solve real problems in health, food and the environment.</p>
+        <p>Genetics is the topic that excites me most. I find it amazing that a tiny code inside every cell can shape so much about an organism, and I'm enjoying learning how scientists read and study it.</p>
+        <p>I'm also learning about AI and data, because modern biology depends on them more every year. I'm still at the beginning, but I try to use AI tools carefully, check what they tell me, and keep learning the basics properly. Right now my goal is to build a strong foundation and find chances to learn more.</p>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section alt">
+      <div class="container narrow">
+        <h2>Education</h2>
+        <div class="timeline">
+          <article class="entry">
+            <h3>Biotechnology, First Year</h3>
+            <p class="meta">JECRC University, Jaipur, Rajasthan</p>
+            <p>Currently studying Biotechnology and building a foundation in biology, chemistry and digital skills.</p>
+          </article>
+          <article class="entry">
+            <h3>Learning focus this year</h3>
+            <p class="meta">Self-study and coursework</p>
+            <p>Core biology concepts, laboratory basics, and digital, data and AI literacy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <p class="note">These are beginner-level skills that I'm learning and practising.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Laboratory basics</h3>
+            <ul class="tags"><li>Lab safety</li><li>Note-taking</li><li>Microscopy basics</li></ul>
+          </div>
+          <div class="card">
+            <h3>Digital literacy</h3>
+            <ul class="tags"><li>Online research</li><li>Evaluating sources</li><li>Spreadsheets</li><li>Basic HTML/CSS</li></ul>
+          </div>
+          <div class="card">
+            <h3>Data and AI literacy</h3>
+            <ul class="tags"><li>Reading graphs</li><li>Data privacy awareness</li><li>Using AI tools responsibly</li></ul>
+          </div>
+          <div class="card">
+            <h3>Personal</h3>
+            <ul class="tags"><li>Curiosity</li><li>Teamwork</li><li>Written communication</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="note">The three projects below are <strong>examples</strong> to show the layout. Replace them with your real work.</p>
+        <div class="grid three">
+          <article class="card project">
+            <span class="badge">Example</span>
+            <h3>Plant Cell Observation Journal</h3>
+            <p>A sample write-up of observing onion-peel cells under a microscope, with labelled sketches and a short reflection on what was learned.</p>
+            <ul class="tags"><li>Microscopy</li><li>Documentation</li></ul>
+          </article>
+          <article class="card project">
+            <span class="badge">Example</span>
+            <h3>Reading a DNA Sequence Database</h3>
+            <p>A sample digital literacy exercise: searching a public biological database, noting the source and date, and summarising one gene's function in plain language.</p>
+            <ul class="tags"><li>Research</li><li>Data literacy</li></ul>
+          </article>
+          <article class="card project">
+            <span class="badge">Example</span>
+            <h3>Fact-Checking AI Answers in Biology</h3>
+            <p>A sample study that compares an AI tool's answers to a textbook and a trusted journal, then lists where the answers were incomplete or wrong.</p>
+            <ul class="tags"><li>AI literacy</li><li>Critical thinking</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2>Contact</h2>
+        <p>I'm looking for chances to learn and grow, so feel free to reach out using the form below.</p>
+        <ul class="contact-list">
+          <li>University: JECRC University, Jaipur, Rajasthan</li>
+          <li>Course: Biotechnology, first year</li>
+        </ul>
+        <!-- This form opens the visitor's email app. It does not send data to a server. -->
+        <form id="contact-form" novalidate>
+          <label for="msg-name">Your name</label>
+          <input id="msg-name" type="text" required>
+          <label for="msg-text">Message</label>
+          <textarea id="msg-text" rows="4" required></textarea>
+          <button class="btn" type="submit">Write email</button>
+          <p id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Vaibhav. Built with HTML, CSS and JavaScript.</p>
+  </footer>
+</body>
+</html>
